@@ -18,8 +18,8 @@ url = f"https://api.giphy.com/v1/gifs/search?api_key={api_key}&q={query}&limit={
 response = requests.get(url)
 data = response.json() 
 
+data = data['data'][0]
+img_url = data['images']['fixed_height']['url']
 
-img_url = data['data'][0]['images']['fixed_height']['url']
-
-
+print(data)
 print(img_url)
